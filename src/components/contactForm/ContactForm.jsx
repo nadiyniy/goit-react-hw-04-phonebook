@@ -1,13 +1,9 @@
 import React from 'react';
 import { StyledContactForm } from './ContactForm.styled';
 import propTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const ContactForm = ({ onAddContact, contacts }) => {
-  // state = {
-  //   name: '',
-  //   number: '',
-  // };
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -24,9 +20,6 @@ const ContactForm = ({ onAddContact, contacts }) => {
   const handelOnSubmit = e => {
     e.preventDefault();
 
-    // const { name, number } = this.state;
-    // const { contacts, onAddContact } = this.props;
-
     const newContact = {
       number: number.trim(),
       name: name.trim(),
@@ -39,7 +32,6 @@ const ContactForm = ({ onAddContact, contacts }) => {
 
     onAddContact(newContact);
 
-    // contacts = [newContact, ...contacts];
     setName('');
     setNumber('');
   };
